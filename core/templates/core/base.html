@@ -8,575 +8,665 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>{% block title %}Assignment Agency{% endblock %}</title>
+    <title>{% block title %}Assignment Agency{% endblock %}</title>
 
-<!-- Bootstrap 5.3.3 CSS -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap 5.3.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-<!-- Bootstrap Icons -->
-<link rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
-<!-- Custom CSS -->
-<style>
+    <!-- Custom CSS -->
+    <style>
+        /* ================= GENERAL ================= */
 
-    /* ================= GENERAL ================= */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+            color: #212529;
+            line-height: 1.6;
+        }
 
-    body {
-        font-family: Arial, sans-serif;
-        background-color: #ffffff;
-        color: #212529;
-        line-height: 1.6;
-    }
+        a {
+            transition: all 0.25s ease;
+        }
 
-    a {
-        transition: all 0.25s ease;
-    }
+        /* ================= NAVBAR ================= */
 
-    /* ================= NAVBAR ================= */
+        .navbar {
+            padding: 14px 0;
+            border-bottom: 1px solid #eef1f5;
+        }
 
-    .navbar {
-        padding: 14px 0;
-        border-bottom: 1px solid #eef1f5;
-    }
+        .navbar-brand {
+            font-size: 1.35rem;
+            letter-spacing: -0.3px;
+        }
 
-    .navbar-brand {
-        font-size: 1.35rem;
-        letter-spacing: -0.3px;
-    }
+        .nav-link {
+            font-weight: 500;
+            color: #4b5563 !important;
+            padding-top: 10px !important;
+            padding-bottom: 10px !important;
+            transition: color 0.25s ease;
+        }
 
-    .nav-link {
-        font-weight: 500;
-        color: #4b5563 !important;
-        padding-top: 10px !important;
-        padding-bottom: 10px !important;
-        transition: color 0.25s ease;
-    }
-
-    .nav-link:hover {
-        color: #0d6efd !important;
-    }
-
-    .navbar .btn-success {
-        border-radius: 8px;
-        font-weight: 600;
-        padding: 9px 17px;
-    }
-
-    .navbar .btn-success:hover {
-        transform: translateY(-1px);
-    }
-
-    /* ================= HERO ================= */
-
-    main > section:first-child {
-        background:
-            radial-gradient(circle at 85% 20%, rgba(13, 110, 253, 0.10), transparent 30%),
-            linear-gradient(135deg, #f7faff 0%, #eef4ff 100%) !important;
-        border-bottom: 1px solid #e8eef8;
-    }
-
-    main > section:first-child .container {
-        padding-top: 95px !important;
-        padding-bottom: 95px !important;
-    }
-
-    main > section:first-child .badge {
-        padding: 8px 14px;
-        border-radius: 50px;
-        font-weight: 600;
-        letter-spacing: 0.2px;
-    }
-
-    main > section:first-child h1 {
-        color: #172b4d !important;
-        font-size: clamp(2.4rem, 5vw, 4rem);
-        line-height: 1.12;
-        letter-spacing: -1.5px;
-        max-width: 800px;
-    }
-
-    main > section:first-child p {
-        max-width: 720px;
-        line-height: 1.8;
-        font-size: 1.12rem;
-    }
-
-    main > section:first-child .btn {
-        border-radius: 8px;
-        font-weight: 600;
-        padding: 12px 24px;
-    }
-
-    main > section:first-child .btn-primary {
-        box-shadow: 0 8px 20px rgba(13, 110, 253, 0.18);
-    }
-
-    main > section:first-child .btn-success {
-        box-shadow: 0 8px 20px rgba(25, 135, 84, 0.15);
-    }
-
-    /* ================= SECTIONS ================= */
-
-    main section {
-        position: relative;
-    }
-
-    main section h2 {
-        color: #172b4d;
-        letter-spacing: -0.5px;
-    }
-
-    main section .text-primary {
-        letter-spacing: 0.8px;
-        font-size: 0.85rem;
-    }
-
-    /* ================= CARDS ================= */
-
-    .card {
-        border-radius: 14px !important;
-        transition:
-            transform 0.25s ease,
-            box-shadow 0.25s ease;
-    }
-
-    .card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 14px 30px rgba(15, 23, 42, 0.09) !important;
-    }
-
-    /* Service cards */
-
-    .card .fs-1 {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        width: 64px;
-        height: 64px;
-        background: #eef4ff;
-        border-radius: 14px;
-        font-size: 2rem !important;
-    }
-
-    .card h4 {
-        color: #172b4d;
-    }
-
-    /* ================= WHY US ================= */
-
-    main section.bg-light {
-        background-color: #f7f9fc !important;
-    }
-
-    main section.bg-light .bg-white {
-        border: 1px solid #edf0f5;
-        border-radius: 14px !important;
-        transition: all 0.25s ease;
-    }
-
-    main section.bg-light .bg-white:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 12px 28px rgba(15, 23, 42, 0.07) !important;
-    }
-
-    /* ================= REVIEW CARDS ================= */
-
-    main section .card p {
-        line-height: 1.75;
-    }
-
-    .text-warning {
-        letter-spacing: 2px;
-    }
-
-    /* ================= BUTTONS ================= */
-
-    .btn {
-        transition: all 0.25s ease;
-    }
-
-    .btn-primary:hover,
-    .btn-success:hover {
-        transform: translateY(-2px);
-    }
-
-    .btn-outline-primary:hover {
-        transform: translateY(-2px);
-    }
-
-    /* ================= CTA / QUOTE SECTION ================= */
-
-    main section.bg-primary {
-        background:
-            linear-gradient(135deg, #0d6efd 0%, #084298 100%) !important;
-    }
-
-    main section.bg-primary h2 {
-        color: #ffffff;
-    }
-
-    main section.bg-primary p {
-        max-width: 700px;
-        margin-left: auto;
-        margin-right: auto;
-        opacity: 0.92;
-    }
-
-    main section.bg-primary .btn-light {
-        border-radius: 8px;
-        font-weight: 600;
-        padding: 12px 25px;
-    }
-
-    main section.bg-primary .btn-light:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-    }
-
-    /* ================= FOOTER ================= */
-
-    footer {
-        background: #111827;
-        color: #ffffff;
-    }
-
-    footer h5,
-    footer h6 {
-        color: #ffffff;
-    }
-
-    footer p {
-        line-height: 1.7;
-    }
-
-    footer .text-secondary {
-        color: #9ca3af !important;
-    }
-
-    footer a {
-        color: #cbd5e1;
-        text-decoration: none;
-    }
-
-    footer a:hover {
-        color: #ffffff;
-        padding-left: 3px;
-    }
-
-    footer .btn-success {
-        border-radius: 8px;
-        font-weight: 600;
-    }
-
-    footer hr {
-        opacity: 0.2;
-    }
-
-    /* ================= MOBILE ================= */
-
-    @media (max-width: 991px) {
-
-        .navbar-nav {
-            padding-top: 10px;
+        .nav-link:hover {
+            color: #0d6efd !important;
         }
 
         .navbar .btn-success {
-            display: inline-block;
-            margin-top: 5px;
+            border-radius: 8px;
+            font-weight: 600;
+            padding: 9px 17px;
         }
 
-    }
-
-    @media (max-width: 768px) {
-
-        main > section:first-child .container {
-            padding-top: 70px !important;
-            padding-bottom: 70px !important;
+        .navbar .btn-success:hover {
+            transform: translateY(-1px);
         }
 
-        main > section:first-child h1 {
-            font-size: 2.35rem;
-            letter-spacing: -0.8px;
+        /* ================= HERO ================= */
+
+        main>section:first-child {
+            background:
+                radial-gradient(circle at 85% 20%, rgba(13, 110, 253, 0.10), transparent 30%),
+                linear-gradient(135deg, #f7faff 0%, #eef4ff 100%) !important;
+            border-bottom: 1px solid #e8eef8;
         }
 
-        main > section:first-child p {
-            font-size: 1rem;
+        main>section:first-child .container {
+            padding-top: 95px !important;
+            padding-bottom: 95px !important;
         }
 
-        main > section:first-child .btn {
+        main>section:first-child .badge {
+            padding: 8px 14px;
+            border-radius: 50px;
+            font-weight: 600;
+            letter-spacing: 0.2px;
+        }
+
+        main>section:first-child h1 {
+            color: #172b4d !important;
+            font-size: clamp(2.4rem, 5vw, 4rem);
+            line-height: 1.12;
+            letter-spacing: -1.5px;
+            max-width: 800px;
+        }
+
+        main>section:first-child p {
+            max-width: 720px;
+            line-height: 1.8;
+            font-size: 1.12rem;
+        }
+
+        main>section:first-child .btn {
+            border-radius: 8px;
+            font-weight: 600;
+            padding: 12px 24px;
+        }
+
+        main>section:first-child .btn-primary {
+            box-shadow: 0 8px 20px rgba(13, 110, 253, 0.18);
+        }
+
+        main>section:first-child .btn-success {
+            box-shadow: 0 8px 20px rgba(25, 135, 84, 0.15);
+        }
+
+        /* ================= SECTIONS ================= */
+
+        main section {
+            position: relative;
+        }
+
+        main section h2 {
+            color: #172b4d;
+            letter-spacing: -0.5px;
+        }
+
+        main section .text-primary {
+            letter-spacing: 0.8px;
+            font-size: 0.85rem;
+        }
+
+        /* ================= CARDS ================= */
+
+        .card {
+            border-radius: 14px !important;
+            transition:
+                transform 0.25s ease,
+                box-shadow 0.25s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 14px 30px rgba(15, 23, 42, 0.09) !important;
+        }
+
+        /* Service cards */
+
+        .card .fs-1 {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 64px;
+            height: 64px;
+            background: #eef4ff;
+            border-radius: 14px;
+            font-size: 2rem !important;
+        }
+
+        .card h4 {
+            color: #172b4d;
+        }
+
+        /* ================= WHY US ================= */
+
+        main section.bg-light {
+            background-color: #f7f9fc !important;
+        }
+
+        main section.bg-light .bg-white {
+            border: 1px solid #edf0f5;
+            border-radius: 14px !important;
+            transition: all 0.25s ease;
+        }
+
+        main section.bg-light .bg-white:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 28px rgba(15, 23, 42, 0.07) !important;
+        }
+
+        /* ================= REVIEW CARDS ================= */
+
+        main section .card p {
+            line-height: 1.75;
+        }
+
+        .text-warning {
+            letter-spacing: 2px;
+        }
+
+        /* ================= BUTTONS ================= */
+
+        .btn {
+            transition: all 0.25s ease;
+        }
+
+        .btn-primary:hover,
+        .btn-success:hover {
+            transform: translateY(-2px);
+        }
+
+        .btn-outline-primary:hover {
+            transform: translateY(-2px);
+        }
+
+        /* ================= CTA / QUOTE SECTION ================= */
+
+        main section.bg-primary {
+            background:
+                linear-gradient(135deg, #0d6efd 0%, #084298 100%) !important;
+        }
+
+        main section.bg-primary h2 {
+            color: #ffffff;
+        }
+
+        main section.bg-primary p {
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0.92;
+        }
+
+        main section.bg-primary .btn-light {
+            border-radius: 8px;
+            font-weight: 600;
+            padding: 12px 25px;
+        }
+
+        main section.bg-primary .btn-light:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            background: #111827;
+            color: #ffffff;
+        }
+
+        footer h5,
+        footer h6 {
+            color: #ffffff;
+        }
+
+        footer p {
+            line-height: 1.7;
+        }
+
+        footer .text-secondary {
+            color: #9ca3af !important;
+        }
+
+        footer a {
+            color: #cbd5e1;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: #ffffff;
+            padding-left: 3px;
+        }
+
+        footer .btn-success {
+            border-radius: 8px;
+            font-weight: 600;
+        }
+
+        footer hr {
+            opacity: 0.2;
+        }
+
+        /* ================= MOBILE ================= */
+
+        @media (max-width: 991px) {
+
+            .navbar-nav {
+                padding-top: 10px;
+            }
+
+            .navbar .btn-success {
+                display: inline-block;
+                margin-top: 5px;
+            }
+
+        }
+
+        @media (max-width: 768px) {
+
+            main>section:first-child .container {
+                padding-top: 70px !important;
+                padding-bottom: 70px !important;
+            }
+
+            main>section:first-child h1 {
+                font-size: 2.35rem;
+                letter-spacing: -0.8px;
+            }
+
+            main>section:first-child p {
+                font-size: 1rem;
+            }
+
+            main>section:first-child .btn {
+                width: 100%;
+                margin: 5px 0 !important;
+            }
+
+            main section .container {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+
+        }
+
+        /* ================= ANNOUNCEMENT BAR ================= */
+
+        .announcement-bar {
             width: 100%;
-            margin: 5px 0 !important;
+            overflow: hidden;
+            background: #0d6efd;
+            color: #ffffff;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            white-space: nowrap;
         }
 
-        main section .container {
-            padding-left: 20px;
-            padding-right: 20px;
+        .announcement-track {
+            display: flex;
+            width: max-content;
+            animation: announcementScroll 24s linear infinite;
         }
 
-    }
-    
+        .announcement-track span {
+            display: flex;
+            align-items: center;
+            padding-right: 120px;
+            font-size: 14px;
+            font-weight: 500;
+        }
 
-</style>
+        .announcement-track i {
+            margin-right: 7px;
+            font-size: 15px;
+        }
+
+        .announcement-track a {
+            color: #ffffff;
+            font-weight: 700;
+            text-decoration: underline;
+            margin-left: 5px;
+        }
+
+        .announcement-track a:hover {
+            color: #e7f1ff;
+        }
+
+        /* Pause when mouse is over the bar */
+
+        .announcement-bar:hover .announcement-track {
+            animation-play-state: paused;
+        }
+
+        @keyframes announcementScroll {
+
+            from {
+                transform: translateX(0);
+            }
+
+            to {
+                transform: translateX(-50%);
+            }
+
+        }
+
+        /* Mobile */
+
+        @media (max-width: 768px) {
+
+            .announcement-bar {
+                height: 38px;
+            }
+
+            .announcement-track span {
+                font-size: 13px;
+                padding-right: 80px;
+            }
+
+        }
+    </style>
 
 
 </head>
 
 <body>
+    <!-- ================= TOP ANNOUNCEMENT BAR ================= -->
 
-<!-- ================= NAVBAR ================= -->
+    <div class="announcement-bar">
 
-<nav class="navbar navbar-expand-lg bg-white shadow-sm sticky-top">
+        <div class="announcement-track">
 
-    <div class="container">
+            <span>
+                <i class="bi bi-whatsapp"></i>
+                Looking for Assignment, Project or Dissertation Help?
+                Contact us on WhatsApp:
+                <a href="https://wa.me/447455670954" target="_blank">
+                    +44 7455 670954
+                </a>
+            </span>
 
-        <!-- Logo -->
-        <a class="navbar-brand fw-bold text-primary" href="/">
-            Assignment Agency
-        </a>
-
-        <!-- Mobile Menu Button -->
-        <button class="navbar-toggler"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#mainNavbar"
-                aria-controls="mainNavbar"
-                aria-expanded="false"
-                aria-label="Toggle navigation">
-
-            <span class="navbar-toggler-icon"></span>
-
-        </button>
-
-        <!-- Navigation Links -->
-        <div class="collapse navbar-collapse" id="mainNavbar">
-
-            <ul class="navbar-nav ms-auto align-items-lg-center">
-
-                <li class="nav-item">
-                    <a class="nav-link px-3" href="/">
-                        Home
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link px-3" href="/services/">
-                        Services
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link px-3" href="/samples/">
-                        Samples
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link px-3" href="/reviews/">
-                        Reviews
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link px-3" href="/quote/">
-                        Get a Quote
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link px-3" href="/contact/">
-                        Contact
-                    </a>
-                </li>
-
-                <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
-
-                    <a href="https://wa.me/447455670954"
-                       target="_blank"
-                       class="btn btn-success px-3">
-
-                        <i class="bi bi-whatsapp"></i>
-                        WhatsApp
-
-                    </a>
-
-                </li>
-
-            </ul>
+            <span>
+                <i class="bi bi-whatsapp"></i>
+                Looking for Assignment, Project or Dissertation Help?
+                Contact us on WhatsApp:
+                <a href="https://wa.me/447455670954" target="_blank">
+                    +44 7455 670954
+                </a>
+            </span>
 
         </div>
 
     </div>
 
-</nav>
+    <!-- ================= NAVBAR ================= -->
 
+    <nav class="navbar navbar-expand-lg bg-white shadow-sm sticky-top">
 
-<!-- ================= MAIN CONTENT ================= -->
+        <div class="container">
 
-<main>
+            <!-- Logo -->
+            <a class="navbar-brand fw-bold text-primary" href="/">
+                Assignment Agency
+            </a>
 
-    {% block content %}
-    {% endblock %}
+            <!-- Mobile Menu Button -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar"
+                aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
 
-</main>
+                <span class="navbar-toggler-icon"></span>
 
+            </button>
 
-<!-- ================= FOOTER ================= -->
+            <!-- Navigation Links -->
+            <div class="collapse navbar-collapse" id="mainNavbar">
 
-<footer class="pt-5 pb-4">
+                <ul class="navbar-nav ms-auto align-items-lg-center">
 
-    <div class="container">
-
-        <div class="row g-4">
-
-            <!-- About -->
-            <div class="col-lg-4 col-md-6">
-
-                <h5 class="fw-bold">
-                    Assignment Agency
-                </h5>
-
-                <p class="text-secondary mt-3">
-                    Professional academic and IT project
-                    support tailored to your requirements.
-                </p>
-
-                <a href="https://wa.me/447455670954"
-                   target="_blank"
-                   class="btn btn-success mt-2">
-
-                    <i class="bi bi-whatsapp"></i>
-                    Contact on WhatsApp
-
-                </a>
-
-            </div>
-
-
-            <!-- Quick Links -->
-            <div class="col-lg-2 col-md-6">
-
-                <h6 class="fw-bold">
-                    Quick Links
-                </h6>
-
-                <ul class="list-unstyled mt-3">
-
-                    <li class="mb-2">
-                        <a href="/">
+                    <li class="nav-item">
+                        <a class="nav-link px-3" href="/">
                             Home
                         </a>
                     </li>
 
-                    <li class="mb-2">
-                        <a href="/services/">
+                    <li class="nav-item">
+                        <a class="nav-link px-3" href="/services/">
                             Services
                         </a>
                     </li>
 
-                    <li class="mb-2">
-                        <a href="/samples/">
+                    <li class="nav-item">
+                        <a class="nav-link px-3" href="/samples/">
                             Samples
                         </a>
                     </li>
 
-                    <li class="mb-2">
-                        <a href="/reviews/">
+                    <li class="nav-item">
+                        <a class="nav-link px-3" href="/reviews/">
                             Reviews
                         </a>
                     </li>
 
-                </ul>
-
-            </div>
-
-
-            <!-- Services -->
-            <div class="col-lg-3 col-md-6">
-
-                <h6 class="fw-bold">
-                    Services
-                </h6>
-
-                <ul class="list-unstyled mt-3 text-secondary">
-
-                    <li class="mb-2">
-                        Assignments
+                    <li class="nav-item">
+                        <a class="nav-link px-3" href="/quote/">
+                            Get a Quote
+                        </a>
                     </li>
 
-                    <li class="mb-2">
-                        Essays
+                    <li class="nav-item">
+                        <a class="nav-link px-3" href="/contact/">
+                            Contact
+                        </a>
                     </li>
 
-                    <li class="mb-2">
-                        Research Projects
-                    </li>
+                    <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
 
-                    <li class="mb-2">
-                        Dissertations
-                    </li>
+                        <a href="https://wa.me/447455670954" target="_blank" class="btn btn-success px-3">
 
-                    <li class="mb-2">
-                        IT Projects
+                            <i class="bi bi-whatsapp"></i>
+                            WhatsApp
+
+                        </a>
+
                     </li>
 
                 </ul>
 
             </div>
 
+        </div>
 
-            <!-- Contact -->
-            <div class="col-lg-3 col-md-6">
+    </nav>
 
-                <h6 class="fw-bold">
-                    Contact
-                </h6>
 
-                <div class="mt-3 text-secondary">
+    <!-- ================= MAIN CONTENT ================= -->
 
-                    <p>
+    <main>
+
+        {% block content %}
+        {% endblock %}
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="pt-5 pb-4">
+
+        <div class="container">
+
+            <div class="row g-4">
+
+                <!-- About -->
+                <div class="col-lg-4 col-md-6">
+
+                    <h5 class="fw-bold">
+                        Assignment Agency
+                    </h5>
+
+                    <p class="text-secondary mt-3">
+                        Professional academic and IT project
+                        support tailored to your requirements.
+                    </p>
+
+                    <a href="https://wa.me/447455670954" target="_blank" class="btn btn-success mt-2">
+
                         <i class="bi bi-whatsapp"></i>
-                        WhatsApp
-                    </p>
+                        Contact on WhatsApp
 
-                    <p>
-                        <i class="bi bi-envelope"></i>
-                        Email Support
-                    </p>
+                    </a>
 
-                    <p>
-                        <i class="bi bi-clock"></i>
-                        Quick Response
-                    </p>
+                </div>
+
+
+                <!-- Quick Links -->
+                <div class="col-lg-2 col-md-6">
+
+                    <h6 class="fw-bold">
+                        Quick Links
+                    </h6>
+
+                    <ul class="list-unstyled mt-3">
+
+                        <li class="mb-2">
+                            <a href="/">
+                                Home
+                            </a>
+                        </li>
+
+                        <li class="mb-2">
+                            <a href="/services/">
+                                Services
+                            </a>
+                        </li>
+
+                        <li class="mb-2">
+                            <a href="/samples/">
+                                Samples
+                            </a>
+                        </li>
+
+                        <li class="mb-2">
+                            <a href="/reviews/">
+                                Reviews
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <!-- Services -->
+                <div class="col-lg-3 col-md-6">
+
+                    <h6 class="fw-bold">
+                        Services
+                    </h6>
+
+                    <ul class="list-unstyled mt-3 text-secondary">
+
+                        <li class="mb-2">
+                            Assignments
+                        </li>
+
+                        <li class="mb-2">
+                            Essays
+                        </li>
+
+                        <li class="mb-2">
+                            Research Projects
+                        </li>
+
+                        <li class="mb-2">
+                            Dissertations
+                        </li>
+
+                        <li class="mb-2">
+                            IT Projects
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <!-- Contact -->
+                <div class="col-lg-3 col-md-6">
+
+                    <h6 class="fw-bold">
+                        Contact
+                    </h6>
+
+                    <div class="mt-3 text-secondary">
+
+                        <p>
+                            <i class="bi bi-whatsapp"></i>
+                            WhatsApp
+                        </p>
+
+                        <p>
+                            <i class="bi bi-envelope"></i>
+                            Email Support
+                        </p>
+
+                        <p>
+                            <i class="bi bi-clock"></i>
+                            Quick Response
+                        </p>
+
+                    </div>
 
                 </div>
 
             </div>
 
+
+            <hr class="border-secondary mt-4">
+
+
+            <div class="text-center text-secondary">
+
+                <p class="mb-0">
+                    © 2026 Assignment Agency.
+                    All rights reserved.
+                </p>
+
+            </div>
+
         </div>
 
-
-        <hr class="border-secondary mt-4">
-
-
-        <div class="text-center text-secondary">
-
-            <p class="mb-0">
-                © 2026 Assignment Agency.
-                All rights reserved.
-            </p>
-
-        </div>
-
-    </div>
-
-</footer>
+    </footer>
 
 
-<!-- Bootstrap 5.3.3 JavaScript -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
-</script>
-```
+    <!-- Bootstrap 5.3.3 JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+    </script>
+    ```
 
 </body>
 
