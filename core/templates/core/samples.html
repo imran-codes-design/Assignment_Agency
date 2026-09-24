@@ -1,0 +1,152 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Samples | Assignment Agency{% endblock %}
+
+{% block content %}
+
+<!-- ================= PAGE HEADER ================= -->
+
+<section class="bg-light py-5">
+
+
+<div class="container py-4 text-center">
+
+    <span class="badge bg-primary mb-3">
+        OUR WORK
+    </span>
+
+    <h1 class="display-5 fw-bold">
+        Sample Work
+    </h1>
+
+    <p class="lead text-secondary mt-3">
+        Explore some of our previous academic and IT project work.
+    </p>
+
+</div>
+
+
+</section>
+
+<!-- ================= SAMPLES ================= -->
+
+<section class="py-5">
+
+
+<div class="container py-4">
+
+    {% if samples %}
+
+        <div class="row g-4">
+
+            {% for sample in samples %}
+
+                <div class="col-md-6 col-lg-4">
+
+                    <div class="card border-0 shadow-sm h-100">
+
+                        <div class="card-body p-4">
+
+                            <!-- Category -->
+
+                            <span class="badge bg-primary mb-3">
+                                {{ sample.category }}
+                            </span>
+
+
+                            <!-- Title -->
+
+                            <h4 class="fw-bold">
+                                {{ sample.title }}
+                            </h4>
+
+
+                            <!-- Description -->
+
+                            <p class="text-secondary">
+                                {{ sample.description }}
+                            </p>
+
+
+                            <!-- Buttons -->
+
+                            <div class="mt-4 d-flex gap-2">
+
+                                <a href="{{ sample.file.url }}"
+                                   target="_blank"
+                                   class="btn btn-outline-primary">
+
+                                    View Sample
+
+                                </a>
+
+
+                                <a href="{{ sample.file.url }}"
+                                   download
+                                   class="btn btn-primary">
+
+                                    Download
+
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            {% endfor %}
+
+        </div>
+
+    {% else %}
+
+        <div class="text-center py-5">
+
+            <h3>
+                Samples Coming Soon
+            </h3>
+
+            <p class="text-secondary">
+                We are currently preparing our sample work.
+            </p>
+
+        </div>
+
+    {% endif %}
+
+</div>
+
+
+</section>
+
+<!-- ================= CTA ================= -->
+
+<section class="bg-primary text-white py-5">
+
+
+<div class="container text-center py-4">
+
+    <h2 class="fw-bold">
+        Need Help With Your Project?
+    </h2>
+
+    <p class="lead">
+        View our samples and then tell us about your project.
+    </p>
+
+    <a href="/quote/"
+       class="btn btn-light btn-lg">
+
+        Get a Quote
+
+    </a>
+
+</div>
+
+
+</section>
+
+{% endblock %}

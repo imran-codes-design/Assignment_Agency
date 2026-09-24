@@ -1,0 +1,142 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Reviews | Assignment Agency{% endblock %}
+
+{% block content %}
+
+<!-- ================= PAGE HEADER ================= -->
+
+<section class="bg-light py-5">
+
+
+<div class="container py-4 text-center">
+
+    <span class="badge bg-primary mb-3">
+        CLIENT FEEDBACK
+    </span>
+
+    <h1 class="display-5 fw-bold">
+        What Our Clients Say
+    </h1>
+
+    <p class="lead text-secondary mt-3">
+        Feedback from students who have worked with us.
+    </p>
+
+</div>
+
+
+</section>
+
+<!-- ================= REVIEWS ================= -->
+
+<section class="py-5">
+
+
+<div class="container py-4">
+
+    {% if reviews %}
+
+        <div class="row g-4">
+
+            {% for review in reviews %}
+
+                <div class="col-md-6 col-lg-4">
+
+                    <div class="card border-0 shadow-sm h-100 p-4">
+
+                        <!-- Rating -->
+
+                        <div class="mb-3">
+
+                            {% for i in "12345" %}
+
+                                {% if forloop.counter <= review.rating %}
+                                    <span class="text-warning fs-5">★</span>
+                                {% else %}
+                                    <span class="text-secondary fs-5">★</span>
+                                {% endif %}
+
+                            {% endfor %}
+
+                        </div>
+
+
+                        <!-- Review -->
+
+                        <p class="text-secondary">
+                            "{{ review.review }}"
+                        </p>
+
+
+                        <!-- Client -->
+
+                        <div class="mt-auto">
+
+                            <h6 class="fw-bold mb-1">
+                                {{ review.name }}
+                            </h6>
+
+                            <small class="text-secondary">
+                                {{ review.country }}
+                            </small>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            {% endfor %}
+
+        </div>
+
+    {% else %}
+
+        <div class="text-center py-5">
+
+            <h3>
+                Reviews Coming Soon
+            </h3>
+
+            <p class="text-secondary">
+                Client feedback will appear here.
+            </p>
+
+        </div>
+
+    {% endif %}
+
+</div>
+
+
+</section>
+
+<!-- ================= CTA ================= -->
+
+<section class="bg-primary text-white py-5">
+
+
+<div class="container text-center py-4">
+
+    <h2 class="fw-bold">
+        Have a Project in Mind?
+    </h2>
+
+    <p class="lead">
+        Tell us about your project and proposed budget.
+    </p>
+
+    <a href="/quote/"
+       class="btn btn-light btn-lg">
+
+        Get a Quote
+
+    </a>
+
+</div>
+
+
+</section>
+
+{% endblock %}

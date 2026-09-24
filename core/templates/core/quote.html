@@ -1,0 +1,188 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Get a Quote | Assignment Agency{% endblock %}
+
+{% block content %}
+
+<section class="bg-light py-5">
+
+```
+<div class="container py-4">
+
+    <div class="text-center mb-5">
+
+        <span class="badge bg-primary mb-3">
+            GET A QUOTE
+        </span>
+
+        <h1 class="fw-bold">
+            Tell Us About Your Project
+        </h1>
+
+        <p class="text-secondary">
+            Share your requirements and proposed budget.
+            We will review your request and contact you.
+        </p>
+
+    </div>
+
+
+    <div class="row justify-content-center">
+
+        <div class="col-lg-8">
+
+            <div class="card border-0 shadow-sm">
+
+                <div class="card-body p-4 p-md-5">
+
+                    <form method="POST">
+
+                        {% csrf_token %}
+
+
+                        <!-- Name -->
+                        <div class="mb-3">
+
+                            <label class="form-label fw-semibold">
+                                Your Name
+                            </label>
+
+                            {{ form.name }}
+
+                        </div>
+
+
+                        <!-- Email -->
+                        <div class="mb-3">
+
+                            <label class="form-label fw-semibold">
+                                Email Address
+                            </label>
+
+                            {{ form.email }}
+
+                        </div>
+
+
+                        <!-- WhatsApp -->
+                        <div class="mb-3">
+
+                            <label class="form-label fw-semibold">
+                                WhatsApp Number
+                            </label>
+
+                            {{ form.whatsapp }}
+
+                        </div>
+
+
+                        <!-- Service -->
+                        <div class="mb-3">
+
+                            <label class="form-label fw-semibold">
+                                Service
+                            </label>
+
+                            {{ form.service }}
+
+                        </div>
+
+
+                        <!-- Project Title -->
+                        <div class="mb-3">
+
+                            <label class="form-label fw-semibold">
+                                Project / Topic
+                            </label>
+
+                            {{ form.project_title }}
+
+                        </div>
+
+
+                        <!-- Requirements -->
+                        <div class="mb-3">
+
+                            <label class="form-label fw-semibold">
+                                Requirements
+                            </label>
+
+                            {{ form.requirements }}
+
+                            <div class="form-text">
+                                Please include important instructions,
+                                modules, guidelines or other requirements.
+                            </div>
+
+                        </div>
+
+
+                        <!-- Deadline -->
+                        <div class="row">
+
+                            <div class="col-md-6 mb-3">
+
+                                <label class="form-label fw-semibold">
+                                    Deadline
+                                </label>
+
+                                {{ form.deadline }}
+
+                            </div>
+
+
+                            <!-- Word Count -->
+                            <div class="col-md-6 mb-3">
+
+                                <label class="form-label fw-semibold">
+                                    Word Count
+                                </label>
+
+                                {{ form.word_count }}
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Budget -->
+                        <div class="mb-4">
+
+                            <label class="form-label fw-semibold">
+                                Your Proposed Budget
+                            </label>
+
+                            {{ form.budget }}
+
+                            <div class="form-text">
+                                Enter the amount you are willing to spend.
+                            </div>
+
+                        </div>
+
+
+                        <!-- Submit -->
+                        <button
+                            type="submit"
+                            class="btn btn-primary btn-lg w-100">
+
+                            Submit Quote Request
+
+                        </button>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+```
+
+</section>
+
+{% endblock %}

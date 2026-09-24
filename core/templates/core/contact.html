@@ -1,0 +1,185 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Contact Us | Assignment Agency{% endblock %}
+
+{% block content %}
+
+<!-- Page Header -->
+<section class="bg-light py-5">
+    <div class="container py-4 text-center">
+
+        <span class="badge bg-primary mb-3">
+            GET IN TOUCH
+        </span>
+
+        <h1 class="display-5 fw-bold">
+            Contact Us
+        </h1>
+
+        <p class="lead text-secondary mt-3">
+            Have a project in mind? Tell us about your requirements
+            and proposed budget.
+        </p>
+
+    </div>
+</section>
+
+
+<!-- Contact Options -->
+<section class="py-5">
+
+    <div class="container py-4">
+
+        <div class="row g-4 justify-content-center">
+
+            <!-- WhatsApp -->
+            <div class="col-md-6 col-lg-4">
+
+                <div class="card border-0 shadow-sm h-100 p-4 text-center">
+
+                    <div class="mb-3">
+                        <i class="bi bi-whatsapp text-success fs-1"></i>
+                    </div>
+
+                    <h4 class="fw-bold">
+                        WhatsApp
+                    </h4>
+
+                    <p class="text-secondary">
+                        Contact us directly on WhatsApp for quick
+                        communication and project discussion.
+                    </p>
+
+                    <a href="https://wa.me/447455670954"
+                       target="_blank"
+                       class="btn btn-success mt-auto">
+                        Chat on WhatsApp
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- Quote -->
+            <div class="col-md-6 col-lg-4">
+
+                <div class="card border-0 shadow-sm h-100 p-4 text-center">
+
+                    <div class="mb-3">
+                        <i class="bi bi-file-earmark-text text-primary fs-1"></i>
+                    </div>
+
+                    <h4 class="fw-bold">
+                        Request a Quote
+                    </h4>
+
+                    <p class="text-secondary">
+                        Submit your project requirements and tell us
+                        your proposed budget.
+                    </p>
+
+                    <a href="/quote/"
+                       class="btn btn-primary mt-auto">
+                        Get a Quote
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- Services -->
+            <div class="col-md-6 col-lg-4">
+
+                <div class="card border-0 shadow-sm h-100 p-4 text-center">
+
+                    <div class="mb-3">
+                        <i class="bi bi-briefcase text-primary fs-1"></i>
+                    </div>
+
+                    <h4 class="fw-bold">
+                        Our Services
+                    </h4>
+
+                    <p class="text-secondary">
+                        Explore our academic and IT services before
+                        starting your project.
+                    </p>
+
+                    <a href="/services/"
+                       class="btn btn-outline-primary mt-auto">
+                        View Services
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- Countries -->
+<section class="bg-light py-5">
+
+    <div class="container py-4 text-center">
+
+        <h2 class="fw-bold mb-3">
+            Supporting Students Worldwide
+        </h2>
+
+        <p class="text-secondary mb-4">
+            We provide academic and IT project support for students
+            across different countries.
+        </p>
+
+        <div class="d-flex justify-content-center gap-3 flex-wrap">
+
+            <span class="badge bg-white text-dark shadow-sm p-3">
+                🇬🇧 United Kingdom
+            </span>
+
+            <span class="badge bg-white text-dark shadow-sm p-3">
+                🇨🇦 Canada
+            </span>
+
+            <span class="badge bg-white text-dark shadow-sm p-3">
+                🇦🇺 Australia
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- Final CTA -->
+<section class="bg-primary text-white py-5">
+
+    <div class="container text-center py-4">
+
+        <h2 class="fw-bold">
+            Ready to Discuss Your Project?
+        </h2>
+
+        <p class="lead">
+            Send us your requirements and proposed budget.
+        </p>
+
+        <a href="https://wa.me/447455670954"
+           target="_blank"
+           class="btn btn-light btn-lg mt-2">
+            <i class="bi bi-whatsapp"></i>
+            Contact Us on WhatsApp
+        </a>
+
+    </div>
+
+</section>
+
+{% endblock %}
